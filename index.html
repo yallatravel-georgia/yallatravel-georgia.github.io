@@ -32,6 +32,57 @@ body{
   text-align:center;
   padding:40px;
 }
+/* ===== Hero title accent line ===== */
+.hero h1{
+  position: relative;
+  display: inline-block;
+}
+
+.hero h1::after{
+  content:"";
+  display:block;
+  width:80px;
+  height:4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  margin:16px auto 0;
+  border-radius:2px;
+}
+
+/* ===== Brand signature around name ===== */
+.brand{
+  position: relative;
+  font-weight:900;
+  letter-spacing:1px;
+  display:inline-block;
+  padding:0 12px;
+}
+
+/* Arabic */
+.brand::before{
+  content:"يلا ترافل";
+  position:absolute;
+  top:-18px;
+  right:-6px;
+  font-size:12px;
+  color:var(--muted);
+  direction:rtl;
+}
+
+/* Georgian */
+.brand::after{
+  content:"იალლა თრეველ";
+  position:absolute;
+  top:-18px;
+  left:-6px;
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* ===== Featured service card ===== */
+.service-card.featured{
+  border:2px solid var(--accent);
+  background: linear-gradient(180deg, #FFF6EC, #FFFFFF);
+}
 
 a{color:var(--primary); text-decoration:none;}
 a:hover{color:var(--accent);}
@@ -54,7 +105,7 @@ a:hover{color:var(--accent);}
 }
 
 .service-card{
-  background:var(--card);
+  background:var(--surface);
   border:1px solid var(--border);
   padding:30px;
   border-radius:12px;
@@ -89,7 +140,8 @@ a:hover{color:var(--accent);}
 </head>
 <body>
  <section class="hero">
-  <h1>Discover Georgia with YALLA Travel</h1>
+  <h1>Discover Georgia with <span class="brand">YALLA Travel</span></h1>
+
 
   <p>
     Create unforgettable memories with private tours, VIP transportation,
@@ -106,7 +158,7 @@ a:hover{color:var(--accent);}
   <div class="service-grid">
     <div class="service-card">Private Tours</div>
     <div class="service-card">Daily Tours</div>
-    <div class="service-card">VIP Transportation</div>
+    <div class="service-card featured">VIP Transportation</div>
     <div class="service-card">Airport Transfer</div>
     <div class="service-card">Honeymoon Packages</div>
     <div class="service-card">Arabic & English Guides</div>
