@@ -33,50 +33,69 @@ body{
   padding:40px;
 }
 /* ===== Hero title accent line ===== */
-.hero h1{
-  position: relative;
-  display: inline-block;
+/* ===== Hero Brand (New) ===== */
+.hero{
+  margin-top:20px;
 }
 
-.hero h1::after{
-  content:"";
-  display:block;
-  width:80px;
-  height:4px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  margin:16px auto 0;
-  border-radius:2px;
-}
-
-/* ===== Brand signature around name ===== */
-.brand{
-  position: relative;
+.brand-title{
+  margin:0;
+  font-size:58px;
   font-weight:900;
   letter-spacing:1px;
-  display:inline-block;
-  padding:0 12px;
+  line-height:1.05;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary) 0%,
+    var(--primary-2) 35%,
+    var(--accent) 70%,
+    var(--accent-2) 100%
+  );
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
 }
 
-/* Arabic */
-.brand::before{
-  content:"يلا ترافل";
-  position:absolute;
-  top:-18px;
-  right:-6px;
-  font-size:12px;
-  color:var(--muted);
+.brand-sub{
+  margin-top:10px;
+  font-size:13px;
+  letter-spacing:1.2px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-sub .ar{
   direction:rtl;
+  color: rgba(15,138,166,0.85);
+  font-weight:700;
 }
 
-/* Georgian */
-.brand::after{
-  content:"იალლა თრეველ";
-  position:absolute;
-  top:-18px;
-  left:-6px;
-  font-size:12px;
-  color:var(--muted);
+.brand-sub .ka{
+  color: rgba(255,140,50,0.80);
+  font-weight:700;
 }
+
+.brand-sub .sep{
+  color: rgba(20,20,20,0.35);
+}
+
+.tagline{
+  margin:16px 0 0;
+  font-size:26px;
+  font-weight:900;
+  color:var(--text);
+}
+
+.subtitle{
+  max-width:760px;
+  margin:16px auto 0;
+  color:var(--muted);
+  font-size:16px;
+}
+
 
 /* ===== Featured service card ===== */
 .service-card.featured{
@@ -115,7 +134,7 @@ a:hover{color:var(--accent);}
 
 .service-card:hover{
   transform:translateY(-5px);
-  border-color:var(--orange);
+  border-color:var(--accent);
 }
 /* ===== CTA Button ===== */
 .cta{
@@ -139,19 +158,28 @@ a:hover{color:var(--accent);}
 
 </head>
 <body>
- <section class="hero">
-  <h1>Discover Georgia with <span class="brand">YALLA Travel</span></h1>
+<section class="hero">
 
+  <h1 class="brand-title">YALLA Travel</h1>
 
-  <p>
-    Create unforgettable memories with private tours, VIP transportation,
-    and Arabic & English support across Georgia.
+  <div class="brand-sub">
+    <span class="ar">يلا ترافل</span>
+    <span class="sep">•</span>
+    <span class="ka">იალლა თრეველ</span>
+  </div>
+
+  <h2 class="tagline">Discover Georgia with Us</h2>
+
+  <p class="subtitle">
+    We don’t just plan trips, we create memories that last a lifetime.
   </p>
 
   <a class="cta" href="https://wa.me/995593644180" target="_blank">
     Book on WhatsApp
   </a>
+
 </section>
+
 <section class="services">
   <h2>Our Services</h2>
 
