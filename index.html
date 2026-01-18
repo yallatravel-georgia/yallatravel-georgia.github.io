@@ -24,22 +24,26 @@
     
 body{
   margin:0;
-  min-height:100vh;
+  color:var(--text);
   font-family: Arial, Helvetica, sans-serif;
-  color:#141414;
-  text-align:center;
   line-height:1.6;
+  text-align:center;
+  padding:40px;
 
-  background: linear-gradient(
-    to bottom,
-    #1e1e1e 0%,      /* أسود اللوغو */
-    #1e1e1e 22%,     /* ثابت مع اللوغو */
-    #0f8aa6 40%,     /* Teal */
-    #f6d2a8 60%,     /* دفء برتقالي */
-    #fff5ec 80%,     /* أبيض دافئ */
-    #ffffff 100%
-  );
+  /* خلفية ناعمة جداً */
+  background:
+    radial-gradient(900px 500px at 18% 22%, rgba(15,163,199,0.10), transparent 60%),
+    radial-gradient(900px 500px at 82% 26%, rgba(255,140,50,0.08), transparent 60%),
+    linear-gradient(
+      to bottom,
+      #292827 0%,
+      #292827 14%,
+      #1f3a41 30%,
+      #e7d6bf 66%,
+      #fbfaf7 100%
+    );
 }
+
 
 
 
@@ -198,7 +202,7 @@ a:hover{color:var(--accent);}
 
 /* Logo */
 .nav-logo img{
-  height:56px;
+  height:88px;
   width:auto;
   object-fit:contain;
 }
@@ -212,11 +216,13 @@ a:hover{color:var(--accent);}
   margin:0;
 }
 
-.nav-links a{
+..nav-links a{
   font-weight:600;
-  color:var(--text);
+  color:#e6e1d8; /* أوف وايت دافئ – واضح على الأسود */
   position:relative;
-  text-decoration:none;
+  transition:color 0.3s ease;
+}
+;
 }
 
 /* underline effect */
@@ -231,8 +237,25 @@ a:hover{color:var(--accent);}
   transition:0.3s ease;
 }
 
+.nav-links a:hover::.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:linear-gradient(90deg, var(--primary), var(--accent));
+  transition:0.3s ease;
+}
+
 .nav-links a:hover::after{
   width:100%;
+}
+
+.nav-links a:hover{
+  color:#f29b38; /* برتقالي ناعم من روح اللوغو */
+}
+
 }
 
 </style>
