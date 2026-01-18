@@ -57,17 +57,22 @@ body{
   font-weight:900;
   letter-spacing:1px;
   line-height:1.05;
-font-family: 'Playfair Display', serif;
+  font-family:'Playfair Display', serif;
+
   background: linear-gradient(
     90deg,
-    var(--primary) 0%,
-    var(--primary-2) 35%,
-    var(--accent) 70%,
-    var(--accent-2) 100%
+    #0F8AA6 0%,
+    #1FA3C7 30%,
+    #FF8C32 80%,
+    #D9792A 100%
   );
+
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
+
+  text-shadow: 0 2px 22px rgba(0,0,0,0.14);
+  filter: contrast(1.08) saturate(1.08);
 }
 
 .brand-sub{
