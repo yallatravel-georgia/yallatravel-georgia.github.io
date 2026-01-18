@@ -23,23 +23,24 @@
 
     
 body{
-body{
   margin:0;
+  min-height:100vh;
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--text);
+  color:#141414;
   text-align:center;
   line-height:1.6;
 
   background: linear-gradient(
     to bottom,
-    #1e1e1e 0%,        /* نفس أسود اللوغو */
-    #1e1e1e 18%,       /* يظل ثابت مع اللوغو */
-    #0f8aa6 35%,       /* Teal (ألوان الطائرة) */
-    #f6d2a8 55%,       /* برتقالي دافئ ناعم */
-    #fffaf5 75%,       /* أبيض مكسور */
-    #ffffff 100%       /* أبيض نهائي */
+    #1e1e1e 0%,      /* أسود اللوغو */
+    #1e1e1e 22%,     /* ثابت مع اللوغو */
+    #0f8aa6 40%,     /* Teal */
+    #f6d2a8 60%,     /* دفء برتقالي */
+    #fff5ec 80%,     /* أبيض دافئ */
+    #ffffff 100%
   );
 }
+
 
 
   color:var(--text);
@@ -192,17 +193,17 @@ a:hover{color:var(--accent);}
   align-items:center;
   max-width:1200px;
   margin:0 auto 40px;
-  padding:10px 20px;
+  padding:16px 24px;
 }
 
+/* Logo */
 .nav-logo img{
-  height:60px;
+  height:56px;
   width:auto;
   object-fit:contain;
 }
 
-}
-
+/* Navigation links */
 .nav-links{
   list-style:none;
   display:flex;
@@ -215,8 +216,10 @@ a:hover{color:var(--accent);}
   font-weight:600;
   color:var(--text);
   position:relative;
+  text-decoration:none;
 }
 
+/* underline effect */
 .nav-links a::after{
   content:"";
   position:absolute;
@@ -225,12 +228,13 @@ a:hover{color:var(--accent);}
   width:0;
   height:2px;
   background:linear-gradient(90deg, var(--primary), var(--accent));
-  transition:0.3s;
+  transition:0.3s ease;
 }
 
 .nav-links a:hover::after{
   width:100%;
 }
+
 </style>
 
 </head>
