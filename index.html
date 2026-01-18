@@ -23,21 +23,24 @@
 
     
 body{
+body{
   margin:0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(31,163,199,0.18) 0%,
-      rgba(255,140,50,0.12) 25%,
-      rgba(247,247,244,0.95) 55%,
-      #FFFFFF 100%
-    );
-  color:var(--text);
   font-family: Arial, Helvetica, sans-serif;
-  line-height:1.6;
+  color: var(--text);
   text-align:center;
-  padding:40px;
+  line-height:1.6;
+
+  background: linear-gradient(
+    to bottom,
+    #1e1e1e 0%,        /* نفس أسود اللوغو */
+    #1e1e1e 18%,       /* يظل ثابت مع اللوغو */
+    #0f8aa6 35%,       /* Teal (ألوان الطائرة) */
+    #f6d2a8 55%,       /* برتقالي دافئ ناعم */
+    #fffaf5 75%,       /* أبيض مكسور */
+    #ffffff 100%       /* أبيض نهائي */
+  );
 }
+
 
   color:var(--text);
   font-family: Arial, Helvetica, sans-serif;
@@ -49,6 +52,11 @@ body{
 /* ===== Hero Brand (New) ===== */
 .hero{
   margin-top:20px;
+  .hero{
+  padding-top:120px;
+  padding-bottom:160px;
+}
+
 }
 
 .brand-title{
@@ -187,10 +195,12 @@ a:hover{color:var(--accent);}
   padding:10px 20px;
 }
 
-.nav-logo{
-  font-weight:900;
-  letter-spacing:2px;
-  color:var(--primary);
+.nav-logo img{
+  height:60px;
+  width:auto;
+  object-fit:contain;
+}
+
 }
 
 .nav-links{
