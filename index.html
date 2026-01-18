@@ -4,23 +4,88 @@
   <meta charset="UTF-8">
   <title>YALLA Travel Georgia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+:root{
+  --bg:#F9F9F7;        /* خلفية فاتحة */
+  --text:#1E1E1E;      /* نص داكن */
+  --orange:#FF8C32;
+  --blue:#1FA3C7;
+  --yellow:#F4D35E;
+  --card:#FFFFFF;      /* كروت / أقسام */
+  --border:#E6E6E2;
+}
+    
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height:1.6;
+  text-align:center;
+  padding:40px;
+}
+
+a{color:var(--yellow); text-decoration:none;}
+a:hover{color:var(--orange);}
+    /* ===== Services Section ===== */
+.services{
+  margin:100px auto;
+  max-width:1000px;
+}
+
+.services h2{
+  font-size:36px;
+  margin-bottom:40px;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:20px;
+}
+
+.service-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:30px;
+  border-radius:12px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.service-card:hover{
+  transform:translateY(-5px);
+  border-color:var(--orange);
+}
+
+</style>
+
 </head>
-<body style="font-family: Arial; text-align:center; padding:40px;">
-  <h1>Welcome to YALLA Travel</h1>
-  <h2>Discover Georgia with Us 🇬🇪</h2>
+<body>
+ <section class="hero">
+  <h1>Discover Georgia with YALLA Travel</h1>
 
   <p>
-    We create unforgettable memories and personalized travel experiences
-    across Georgia.
+    Create unforgettable memories with private tours, VIP transportation,
+    and Arabic & English support across Georgia.
   </p>
 
-  <p>
-    📲 Contact us on WhatsApp<br>
-    <strong>+995 593 644 180</strong>
-  </p>
+  <a class="cta" href="https://wa.me/995593644180" target="_blank">
+    Book on WhatsApp
+  </a>
+</section>
+<section class="services">
+  <h2>Our Services</h2>
 
-  <p>
-    ✈️ Private Tours | VIP Transportation | Arabic & English Support
-  </p>
+  <div class="service-grid">
+    <div class="service-card">Private Tours</div>
+    <div class="service-card">Daily Tours</div>
+    <div class="service-card">VIP Transportation</div>
+    <div class="service-card">Airport Transfer</div>
+    <div class="service-card">Honeymoon Packages</div>
+    <div class="service-card">Arabic & English Guides</div>
+  </div>
+</section>
+
 </body>
 </html>
