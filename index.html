@@ -24,9 +24,21 @@
     
 body{
   margin:0;
-  background: radial-gradient(1200px 600px at 50% -200px, rgba(31,163,199,0.18), transparent 60%),
-              radial-gradient(900px 500px at 80% 0px, rgba(255,140,50,0.12), transparent 55%),
-              var(--bg);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(31,163,199,0.18) 0%,
+      rgba(255,140,50,0.12) 25%,
+      rgba(247,247,244,0.95) 55%,
+      #FFFFFF 100%
+    );
+  color:var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height:1.6;
+  text-align:center;
+  padding:40px;
+}
+
   color:var(--text);
   font-family: Arial, Helvetica, sans-serif;
   line-height:1.6;
@@ -160,11 +172,62 @@ a:hover{color:var(--accent);}
   transform: translateY(-2px);
   box-shadow: 0 18px 40px rgba(255,140,50,0.35);
 }
+/* ===== Navigation Bar ===== */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  max-width:1200px;
+  margin:0 auto 40px;
+  padding:10px 20px;
+}
 
+.nav-logo{
+  font-weight:900;
+  letter-spacing:2px;
+  color:var(--primary);
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:32px;
+  padding:0;
+  margin:0;
+}
+
+.nav-links a{
+  font-weight:600;
+  color:var(--text);
+  position:relative;
+}
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:linear-gradient(90deg, var(--primary), var(--accent));
+  transition:0.3s;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
 </style>
 
 </head>
 <body>
+  <nav class="navbar">
+  <div class="nav-logo">YALLA</div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+</nav>
 <section class="hero">
 
   <h1 class="brand-title">YALLA Travel</h1>
