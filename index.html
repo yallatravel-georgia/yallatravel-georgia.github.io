@@ -46,24 +46,27 @@ body{
 }
 
 /* المحتوى داخل الشريط */
-..nav-inner{
-  max-width:1200px;
-  margin:0 auto;
-  height:100%;                  /* يساوي ارتفاع navbar */
+.nav-inner{
+  width:100%;
+  padding:0 24px;
+  height:100px;                 /* نفس ارتفاع الشريط */
   display:flex;
   align-items:center;
   justify-content:space-between;
 }
 
 
+.nav-logo{
+  height:100%;
+  display:flex;
+  align-items:center;
+  margin:0;                     /* بدون سالب */
+}
 
 .nav-logo img{
-  height:100%;                  /* نفس ارتفاع الشريط */
+  height:92px;                  /* أقل شوي من 100px عشان ما يلزق */
   width:auto;
   object-fit:contain;
-}
-.nav-logo{
-  margin-left:-24px;            /* يلغي البادينغ */
 }
 
 .nav-links{
