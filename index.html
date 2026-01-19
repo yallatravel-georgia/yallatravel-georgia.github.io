@@ -40,25 +40,30 @@ body{
 /* الشريط الأسود - كامل الشاشة */
 .navbar{
   width:100%;
-  background:#292827;   /* نفس اللون تمامًا */
+  height:100px;                 /* ارتفاع الشريط الأسود */
+  background:#292827;
   box-shadow:0 6px 20px rgba(0,0,0,0.35);
 }
 
 /* المحتوى داخل الشريط */
-.nav-inner{
+..nav-inner{
   max-width:1200px;
   margin:0 auto;
-  padding:18px 24px;
-
+  height:100%;                  /* يساوي ارتفاع navbar */
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
 }
 
 
+
 .nav-logo img{
-  height:70px;
+  height:100%;                  /* نفس ارتفاع الشريط */
   width:auto;
+  object-fit:contain;
+}
+.nav-logo{
+  margin-left:-24px;            /* يلغي البادينغ */
 }
 
 .nav-links{
