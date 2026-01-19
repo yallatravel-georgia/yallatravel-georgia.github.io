@@ -40,9 +40,25 @@ body{
 /* الشريط الأسود - كامل الشاشة */
 .navbar{
   width:100%;
-  height:100px;                 /* ارتفاع الشريط الأسود */
+  height:100px;
   background:#292827;
   box-shadow:0 6px 20px rgba(0,0,0,0.35);
+  position:relative; /* ✅ أضِف هذا */
+}
+.navbar::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:3px;
+  background: linear-gradient(
+    90deg,
+    #0F8AA6 0%,
+    #1FA3C7 30%,
+    #FF8C32 65%,
+    #F4D35E 100%
+  );
 }
 
 /* المحتوى داخل الشريط */
@@ -76,6 +92,7 @@ body{
   padding:0;
   margin:0;
 }
+
 
 .nav-links li{ list-style:none; }
 
