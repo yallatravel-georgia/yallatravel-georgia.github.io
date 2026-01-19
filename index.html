@@ -5,24 +5,26 @@
   <title>YALLA Travel Georgia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <style>
+ <style>
 :root{
-  /* Neutrals (فخم ونظيف) */
   --bg:#F7F7F4;
   --surface:#FFFFFF;
   --text:#141414;
   --muted:#5B5B5B;
   --border:#E7E6E1;
 
-  /* Brand accents (مستوحاة من اللوغو) */
-  --primary:#0F8AA6;   /* Teal أغمق شوي */
-  --primary-2:#1FA3C7; /* Teal اللوغو */
-  --accent:#FF8C32;    /* Orange اللوغو */
-  --accent-2:#F4D35E;  /* Yellow خفيف */
+  /* من اللوغو */
+  --primary:#0F8AA6;
+  --primary-2:#1FA3C7;
+  --accent:#FF8C32;
+  --accent-2:#F4D35E;
+
+  /* الأسود اللي طلبته */
+  --logo-black:#292827;
 }
 
-    
-body{
+*{ box-sizing:border-box; }
+
 body{
   margin:0;
   font-family: Arial, Helvetica, sans-serif;
@@ -30,39 +32,84 @@ body{
   text-align:center;
   line-height:1.6;
 
+  /* تدريج ناعم: أسود اللوغو بالأعلى، وبعدين يخف تدريجيًا */
   background: linear-gradient(
     to bottom,
-    #1e1e1e 0%,        /* نفس أسود اللوغو */
-    #1e1e1e 18%,       /* يظل ثابت مع اللوغو */
-    #0f8aa6 35%,       /* Teal (ألوان الطائرة) */
-    #f6d2a8 55%,       /* برتقالي دافئ ناعم */
-    #fffaf5 75%,       /* أبيض مكسور */
-    #ffffff 100%       /* أبيض نهائي */
+    var(--logo-black) 0%,
+    var(--logo-black) 22%,
+    rgba(41,40,39,0.92) 30%,
+    rgba(41,40,39,0.70) 38%,
+    rgba(15,138,166,0.18) 52%,
+    rgba(255,140,50,0.10) 68%,
+    #fffaf5 82%,
+    #ffffff 100%
   );
 }
 
-
-  color:var(--text);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height:1.6;
-  text-align:center;
-  padding:40px;
+/* ===== Navbar ===== */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  max-width:1200px;
+  margin:0 auto;
+  padding:18px 24px;
 }
-/* ===== Hero title accent line ===== */
-/* ===== Hero Brand (New) ===== */
+
+.nav-logo img{
+  height:90px;          /* كبرنا اللوغو */
+  width:auto;
+  object-fit:contain;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.35));
+}
+
+.nav-links{
+  list-style:none;      /* إزالة النقاط */
+  display:flex;         /* نفس السطر */
+  gap:28px;
+  padding:0;
+  margin:0;
+}
+
+.nav-links li{ list-style:none; }
+
+.nav-links a{
+  color:#f3f3f3;        /* يبين على الأسود */
+  font-weight:700;
+  text-decoration:none;
+  position:relative;
+  letter-spacing:0.2px;
+}
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  width:0;
+  height:2px;
+  background:linear-gradient(90deg, var(--primary-2), var(--accent));
+  transition:0.25s;
+}
+
+.nav-links a:hover{
+  color: var(--accent-2);
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+/* ===== Hero ===== */
 .hero{
-  margin-top:20px;
-  .hero{
-  padding-top:120px;
-  padding-bottom:160px;
-}
-
+  padding-top:90px;
+  padding-bottom:120px;
 }
 
 .brand-title{
   margin:0;
   font-size:58px;
-  font-weight:900;
+  font-weight:800;
   letter-spacing:1px;
   line-height:1.05;
   font-family:'Playfair Display', serif;
@@ -79,8 +126,7 @@ body{
   background-clip:text;
   color:transparent;
 
-  text-shadow: 0 2px 22px rgba(0,0,0,0.14);
-  filter: contrast(1.08) saturate(1.08);
+  text-shadow: 0 6px 26px rgba(0,0,0,0.35);
 }
 
 .brand-sub{
@@ -95,78 +141,91 @@ body{
 
 .brand-sub .ar{
   direction:rtl;
-  color: rgba(15,138,166,0.85);
+  color: rgba(255,255,255,0.85);
   font-weight:700;
 }
 
 .brand-sub .ka{
-  color: rgba(255,140,50,0.80);
+  color: rgba(255,140,50,0.85);
   font-weight:700;
 }
 
 .brand-sub .sep{
-  color: rgba(20,20,20,0.35);
+  color: rgba(255,255,255,0.45);
 }
 
 .tagline{
-  margin:16px 0 0;
-  font-size:26px;
+  margin:18px 0 0;
+  font-size:28px;
   font-weight:900;
-  color:var(--text);
+  color:#111;
 }
 
 .subtitle{
-  .subtitle{
   max-width:760px;
   margin:18px auto 0;
   font-size:17px;
   font-weight:500;
-  letter-spacing:0.4px;
-  color:#3A3A3A;
-  font-family: "Georgia", "Times New Roman", serif;
-}
+  letter-spacing:0.2px;
+  color:#2f2f2f;
 }
 
-
-/* ===== Featured service card ===== */
-.service-card.featured{
-  border:2px solid var(--accent);
-  background: linear-gradient(180deg, #FFF6EC, #FFFFFF);
+/* ===== CTA ===== */
+.cta{
+  display:inline-block;
+  background: linear-gradient(135deg, #FF8C32, #FFB15E);
+  color:#111;
+  padding:16px 34px;
+  border-radius:999px;
+  font-size:18px;
+  font-weight:800;
+  box-shadow: 0 12px 30px rgba(255,140,50,0.22);
+  transition:0.25s;
+  margin-top:38px;
 }
 
-a{color:var(--primary); text-decoration:none;}
-a:hover{color:var(--accent);}
+.cta:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(255,140,50,0.28);
+}
 
-    /* ===== Services Section ===== */
+/* ===== Services ===== */
 .services{
-  margin:100px auto;
+  margin:70px auto 110px;
   max-width:1000px;
 }
 
 .services h2{
-  font-size:36px;
-  margin-bottom:40px;
+  font-size:38px;
+  margin-bottom:36px;
 }
 
 .service-grid{
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap:20px;
+  gap:18px;
 }
 
 .service-card{
-  background: linear-gradient(180deg, #FFF6EC, #FFFFFF);
-  border:2px solid var(--accent);
+  background: linear-gradient(180deg, rgba(255,246,236,0.92), rgba(255,255,255,0.98));
+  border:2px solid rgba(255,140,50,0.9);
   padding:30px;
   border-radius:14px;
-  font-weight:700;
-  transition:0.3s;
+  font-weight:800;
+  transition:0.25s;
 }
 
 .service-card:hover{
-  transform:translateY(-6px);
-  box-shadow: 0 18px 40px rgba(255,140,50,0.18);
+  transform:translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
 }
+
+.service-card.featured{
+  border:2px solid var(--accent);
+  box-shadow: 0 14px 36px rgba(255,140,50,0.20);
+}
+</style>
+
 /* ===== CTA Button ===== */
 .cta{
   display:inline-block;
@@ -194,15 +253,12 @@ a:hover{color:var(--accent);}
   margin:0 auto 40px;
   padding:10px 20px;
 }
-
 .nav-logo img{
   height:60px;
   width:auto;
   object-fit:contain;
 }
-
 }
-
 .nav-links{
   list-style:none;        /* إزالة النقاط */
   display:flex;           /* نفس السطر */
@@ -211,19 +267,15 @@ a:hover{color:var(--accent);}
   padding:0;
   margin:0;
 }
-
 .nav-links li{
   list-style:none;
 }
-
 .nav-links a{
-  color:#f5f5f5;          /* واضح على الأسود */
+  color:#f5f5f5 !important;   /* أبيض واضح */
   font-weight:600;
   text-decoration:none;
   position:relative;
 }
-
-
 .nav-links a::after{
   content:"";
   position:absolute;
