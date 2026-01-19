@@ -37,15 +37,22 @@ body{
   );
 }
 /* ===== Navbar ===== */
+/* الشريط الأسود - كامل الشاشة */
 .navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  width:100%;
+  background:#292827;   /* نفس اللون تمامًا */
+  box-shadow:0 6px 20px rgba(0,0,0,0.35);
+}
+
+/* المحتوى داخل الشريط */
+.nav-inner{
   max-width:1200px;
   margin:0 auto;
   padding:18px 24px;
 
-  background: #292827;        /* الغامق */
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 
@@ -166,14 +173,22 @@ body{
 
 </head>
 <body>
-  <nav class="navbar">
-  <div class="nav-logo">   <img src="logo.png" alt="YALLA Travel Logo"> </div>
-  <ul class="nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About Us</a></li>
-    <li><a href="#">Contact Us</a></li>
-  </ul>
+ <nav class="navbar">
+  <div class="nav-inner">
+
+    <div class="nav-logo">
+      <img src="logo.png" alt="YALLA Travel Logo">
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+
+  </div>
 </nav>
+
 <section class="hero">
 
   <h1 class="brand-title">YALLA Travel</h1>
