@@ -107,13 +107,32 @@ body{
 }
 
 .brand-title{
+  margin:0;
   font-size:58px;
   font-weight:800;
+  letter-spacing:1px;
+  line-height:1.05;
   font-family:'Playfair Display', serif;
-  background: linear-gradient(90deg,#0F8AA6,#FF8C32);
+
+  /* تدرّج ناعم من ألوان اللوغو */
+  background: linear-gradient(
+    90deg,
+    #0F8AA6 0%,
+    #1FA3C7 25%,
+    #FF8C32 65%,
+    #F4D35E 100%
+  );
+
   -webkit-background-clip:text;
+  background-clip:text;
   color:transparent;
+
+  /* نعومة ولمعة خفيفة */
+  text-shadow: 0 6px 22px rgba(0,0,0,0.12);
+  -webkit-text-fill-color: transparent;
+
 }
+
 
 .brand-sub{
   margin-top:8px;
