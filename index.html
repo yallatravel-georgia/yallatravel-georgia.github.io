@@ -37,13 +37,12 @@ body{
   );
 }
 /* ===== Navbar ===== */
-/* الشريط الأسود - كامل الشاشة */
 .navbar{
   width:100%;
   height:100px;
   background:#292827;
   box-shadow:0 6px 20px rgba(0,0,0,0.35);
-  position:relative; /* ✅ أضِف هذا */
+  position:relative;
 }
 .navbar::after{
   content:"";
@@ -61,7 +60,6 @@ body{
   );
 }
 
-/* المحتوى داخل الشريط */
 .nav-inner{
   height:100%;
   max-width:1200px;
@@ -74,17 +72,14 @@ body{
   gap:18px;
 }
 
-
-
 .nav-logo{
   height:100%;
   display:flex;
   align-items:center;
-  margin:0;                     /* بدون سالب */
+  margin:0;
 }
-
 .nav-logo img{
-  height:92px;                  /* أقل شوي من 100px عشان ما يلزق */
+  height:92px;
   width:auto;
   object-fit:contain;
 }
@@ -97,10 +92,8 @@ body{
   gap:26px;
   padding:0;
   margin:0;
-  flex:1;   /* هذا السطر هو السر */
+  flex:1;
 }
-
-
 .nav-links li{ list-style:none; }
 
 .nav-links a{
@@ -109,7 +102,6 @@ body{
   text-decoration:none;
   position:relative;
 }
-
 .nav-links a::after{
   content:"";
   position:absolute;
@@ -120,11 +112,8 @@ body{
   background:linear-gradient(90deg, var(--primary), var(--accent));
   transition:0.3s;
 }
+.nav-links a:hover::after{ width:100%; }
 
-.nav-links a:hover::after{
-  width:100%;
-}
-/* زر Book Now */
 .nav-cta{
   flex:0 0 auto;
   display:inline-flex;
@@ -154,16 +143,12 @@ body{
   min-height: 100vh;
   position: relative;
 }
-
-/* طبقة تغميق خفيفة عشان النص يبين */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
   background: rgba(0,0,0,0.35);
 }
-
-/* نخلي محتوى الهيرو فوق الطبقة */
 .hero > *{
   position: relative;
   z-index: 1;
@@ -177,7 +162,6 @@ body{
   line-height:1.05;
   font-family:'Playfair Display', serif;
 
-  /* تدرج ناعم جدًا وانسيابي */
   background: linear-gradient(
     120deg,
     #2a8fa3 0%,
@@ -191,11 +175,8 @@ body{
   -webkit-text-fill-color: transparent;
   color:transparent;
 
-  /* ظل خفيف جدًا */
   text-shadow: 0 2px 8px rgba(0,0,0,0.08);
-
 }
-
 
 .brand-sub{
   margin-top:8px;
@@ -204,12 +185,7 @@ body{
   justify-content:center;
   gap:10px;
 }
-
-.brand-sub .ar{
-  color:#FF8C32;
-  font-weight:700;
-}
-
+.brand-sub .ar,
 .brand-sub .ka{
   color:#FF8C32;
   font-weight:700;
@@ -221,7 +197,6 @@ body{
   font-weight:900;
   color:#111;
 }
-
 .subtitle{
   max-width:760px;
   margin:18px auto;
@@ -241,14 +216,10 @@ body{
   margin-top:40px;
   transition:0.25s;
 }
+.cta:hover{ transform:translateY(-2px); }
 
-.cta:hover{
-  transform:translateY(-2px);
-}
-/* ===== Hero Pro (مثل الصورة) ===== */
-.hero-pro{
-  padding:55px 24px 70px;
-}
+/* ===== Hero Pro ===== */
+.hero-pro{ padding:55px 24px 70px; }
 
 .hero-wrap{
   max-width:1200px;
@@ -260,12 +231,12 @@ body{
 }
 
 .hero-left{
-  background: rgba(12, 16, 18, 0.55);     /* أوضح للنص */
+  background: rgba(12, 16, 18, 0.55);
   border: 1px solid rgba(255,255,255,0.22);
   border-radius:22px;
   padding:34px 30px;
 
-  backdrop-filter: blur(6px);            /* هذا الرقم المثالي */
+  backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 
   box-shadow: 0 18px 45px rgba(0,0,0,0.35);
@@ -274,8 +245,6 @@ body{
   color:#fff;
 }
 
-
-
 .hero-left h1{
   margin:0 0 12px;
   font-size:46px;
@@ -283,7 +252,6 @@ body{
   font-weight:900;
   letter-spacing:0.5px;
 }
-
 .hero-left p{
   margin:0 0 18px;
   color:rgba(255,255,255,0.9);
@@ -296,7 +264,6 @@ body{
   flex-wrap:wrap;
   margin-top:18px;
 }
-
 .btn{
   display:inline-flex;
   align-items:center;
@@ -306,12 +273,10 @@ body{
   font-weight:800;
   text-decoration:none;
 }
-
 .btn-primary{
   color:#111;
   background: linear-gradient(135deg,#FF8C32,#FFB15E);
 }
-
 .btn-ghost{
   color:#fff;
   border:1px solid rgba(255,255,255,0.45);
@@ -335,7 +300,6 @@ body{
   border:1px solid #e7e6e1;
   background:#fff;
 }
-
 .hero-search input{
   border:none;
   outline:none;
@@ -350,24 +314,20 @@ body{
   background:#fff;
   border:1px solid #e7e6e1;
 }
-
 .feature-card img{
   width:100%;
   height:210px;
   object-fit:cover;
   display:block;
 }
-
 .feature-card .fc-body{
   padding:12px 12px 14px;
   text-align:left;
 }
-
 .fc-title{
   font-weight:900;
   margin:0 0 6px;
 }
-
 .fc-meta{
   margin:0;
   color:#4b4b4b;
@@ -380,7 +340,6 @@ body{
   grid-template-columns: repeat(3, 1fr);
   gap:10px;
 }
-
 .mini{
   border:1px solid #e7e6e1;
   background:#fff;
@@ -388,24 +347,18 @@ body{
   overflow:hidden;
   text-align:left;
 }
-
 .mini img{
   width:100%;
   height:90px;
   object-fit:cover;
   display:block;
 }
-
-.mini .m-body{
-  padding:10px;
-}
-
+.mini .m-body{ padding:10px; }
 .m-title{
   margin:0;
   font-weight:900;
   font-size:13px;
 }
-
 .m-sub{
   margin:4px 0 0;
   font-size:12px;
@@ -419,7 +372,6 @@ body{
   .mini-grid{ grid-template-columns: 1fr; }
 }
 
-/* ===== Services (PRO) ===== */
 /* ===== Services (PRO) ===== */
 .services{
   padding: 80px 24px;
@@ -450,7 +402,7 @@ body{
   border: 1px solid rgba(231,230,225,0.9);
   border-radius: 18px;
   padding: 22px 18px;
-  text-align: left; /* خليها */
+  text-align: left;
 
   box-shadow: 0 18px 45px rgba(0,0,0,0.08);
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
@@ -458,22 +410,28 @@ body{
   overflow: hidden;
 }
 
+/* ✅ المطلوب: خط مدرّج "يمشي" فوق البطاقة عند Hover */
 .service-card::before{
   content:"";
   position:absolute;
-  left:0;
   top:0;
-  height:3px;
-  width:0;                         /* مخفي بالبداية */
+  left:-100%;
+  width:100%;
+  height:4px;
   background: linear-gradient(
     90deg,
+    transparent,
     var(--primary),
     var(--accent),
-    var(--primary)
+    transparent
   );
-  transition: width .35s ease;     /* حركة ناعمة */
+  transition: left .45s ease;
+  z-index: 3;
+  pointer-events: none;
 }
-
+.service-card:hover::before{
+  left:100%;
+}
 
 .service-card:hover{
   transform: translateY(-3px);
@@ -513,43 +471,31 @@ body{
   .service-grid{ grid-template-columns: 1fr; }
   .service-card{ text-align: center; }
 }
-
 </style>
-
-
 </head>
+
 <body>
 <nav class="navbar">
   <div class="nav-inner">
 
-    <!-- LOGO -->
     <div class="nav-logo">
       <img src="logo.png" alt="YALLA Travel Logo">
     </div>
 
-    <!-- LINKS -->
     <ul class="nav-links">
       <li><a class="active" href="#">Home</a></li>
       <li><a href="#">About Us</a></li>
       <li><a href="#">Contact Us</a></li>
     </ul>
 
-    <!-- CTA BUTTON -->
-    <a class="nav-cta" 
-       href="https://wa.me/995593644180" 
-       target="_blank">
-       Book Now
-    </a>
+    <a class="nav-cta" href="https://wa.me/995593644180" target="_blank">Book Now</a>
 
   </div>
 </nav>
 
-
-
 <section class="hero hero-pro">
   <div class="hero-wrap">
 
-    <!-- LEFT -->
     <div class="hero-left">
       <h1>Explore Georgia with YALLA Travel</h1>
       <p>
@@ -563,7 +509,6 @@ body{
       </div>
     </div>
 
-    <!-- RIGHT -->
     <div class="hero-right">
       <div class="hero-search">
         <input type="text" placeholder="Search tours..." />
@@ -613,63 +558,44 @@ body{
 
   <div class="service-grid">
 
-    <!-- Tours -->
     <div class="service-card">
       <div class="s-ico">🧭</div>
       <p class="s-title">Tours (Private & Daily)</p>
-      <p class="s-desc">
-        Flexible private tours or well-planned daily trips to Georgia’s top destinations.
-      </p>
+      <p class="s-desc">Flexible private tours or well-planned daily trips to Georgia’s top destinations.</p>
     </div>
 
-    <!-- VIP Transport -->
     <div class="service-card">
       <div class="s-ico">🚘</div>
       <p class="s-title">VIP Transportation</p>
-      <p class="s-desc">
-        Premium vehicles with professional drivers and high safety standards.
-      </p>
+      <p class="s-desc">Premium vehicles with professional drivers and high safety standards.</p>
     </div>
 
-    <!-- Airport Transfer -->
     <div class="service-card">
       <div class="s-ico">✈️</div>
       <p class="s-title">Airport Transfer</p>
-      <p class="s-desc">
-        Smooth pickup and drop-off from all Georgian airports.
-      </p>
+      <p class="s-desc">Smooth pickup and drop-off from all Georgian airports.</p>
     </div>
 
-    <!-- Hotels & Cabins -->
     <div class="service-card">
       <div class="s-ico">🏨</div>
       <p class="s-title">Hotels & Cabins Booking</p>
-      <p class="s-desc">
-        Carefully selected hotels and cozy cabins with the best value.
-      </p>
+      <p class="s-desc">Carefully selected hotels and cozy cabins with the best value.</p>
     </div>
 
-    <!-- Honeymoon -->
     <div class="service-card">
       <div class="s-ico">💍</div>
       <p class="s-title">Honeymoon Packages</p>
-      <p class="s-desc">
-        Romantic experiences and luxury stays for unforgettable moments.
-      </p>
+      <p class="s-desc">Romantic experiences and luxury stays for unforgettable moments.</p>
     </div>
 
-    <!-- Guides -->
     <div class="service-card">
       <div class="s-ico">🗣️</div>
       <p class="s-title">Arabic & English Guides</p>
-      <p class="s-desc">
-        Professional bilingual tour guides for full comfort and clarity.
-      </p>
+      <p class="s-desc">Professional bilingual tour guides for full comfort and clarity.</p>
     </div>
 
   </div>
 </section>
-
 
 </body>
 </html>
