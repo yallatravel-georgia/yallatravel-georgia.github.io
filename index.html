@@ -461,10 +461,19 @@ body{
 .service-card::before{
   content:"";
   position:absolute;
-  left:0; top:0;
-  width:100%; height:3px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
+  left:0;
+  top:0;
+  height:3px;
+  width:0;                         /* مخفي بالبداية */
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--accent),
+    var(--primary)
+  );
+  transition: width .35s ease;     /* حركة ناعمة */
 }
+
 
 .service-card:hover{
   transform: translateY(-3px);
