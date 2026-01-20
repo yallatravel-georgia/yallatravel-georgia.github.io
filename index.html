@@ -147,7 +147,26 @@ body{
 
 /* ===== Hero ===== */
 .hero{
-  padding:100px 20px 130px;
+  background-image: url("images/kazbegi.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* طبقة تغميق خفيفة عشان النص يبين */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.35);
+}
+
+/* نخلي محتوى الهيرو فوق الطبقة */
+.hero > *{
+  position: relative;
+  z-index: 1;
 }
 
 .brand-title{
