@@ -838,18 +838,21 @@ so every journey becomes a memory worth keeping.
 
   let index = 0;
 
-  featuredImg.addEventListener("mouseenter", () => {
-    index = (index + 1) % featuredImages.length;
-
+  function changeFeaturedImage() {
     featuredImg.style.opacity = "0";
 
     setTimeout(() => {
+      index = (index + 1) % featuredImages.length;
       featuredImg.src = featuredImages[index].src;
       featuredImg.style.objectPosition = featuredImages[index].position;
       featuredImg.style.opacity = "1";
-    }, 180);
-  });
+    }, 300);
+  }
+
+  // ⏱️ التغيير كل 4 ثواني
+  setInterval(changeFeaturedImage, 4000);
 </script>
+
 
 
 </body>
