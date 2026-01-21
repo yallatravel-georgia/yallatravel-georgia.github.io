@@ -442,6 +442,38 @@ body{
   color:#4b4b4b;
   font-size:13px;
 }
+.hero-why{
+  margin-top:22px;
+  margin-bottom:8px;
+  font-size:18px;
+  font-weight:900;
+  letter-spacing:0.3px;
+  color:#ffffff;
+  text-transform:uppercase;
+  position:relative;
+  padding-left:12px;
+}
+
+.hero-why::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:4px;
+  width:4px;
+  height:70%;
+  background: linear-gradient(
+    to bottom,
+    var(--accent),
+    var(--primary)
+  );
+  border-radius:4px;
+}
+
+.hero-value{
+  margin:0;
+  color:rgba(255,255,255,0.9);
+  max-width:520px;
+}
 
 /* Responsive */
 @media (max-width: 980px){
@@ -580,6 +612,11 @@ body{
         Premium tours across Georgia with comfortable transport, trusted planning,
         and Arabic support. We turn your trip into a real memory.
       </p>
+      <h3 class="hero-why">Why YALLA Travel?</h3>
+<p class="hero-value">
+  We deliver premium travel experiences at the best value —
+  turning every trip into an unforgettable memory.
+</p>
 
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://wa.me/995593644180" target="_blank">Book on WhatsApp</a>
