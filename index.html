@@ -581,6 +581,78 @@ body{
   .service-grid{ grid-template-columns: 1fr; }
   .service-card{ text-align: center; }
 }
+  .site-footer {
+  background: #141414;
+  color: #ddd;
+  padding: 60px 8% 30px;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.2fr;
+  gap: 40px;
+}
+
+.footer-col h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.footer-col h4 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #bdbdbd;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+  color: #bdbdbd;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-col ul li a:hover {
+  color: #ff9f43;
+}
+
+.footer-col a {
+  color: #ff9f43;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
 </style>
 </head>
 
@@ -717,6 +789,39 @@ so every journey becomes a memory worth keeping.
 
   </div>
 </section>
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-col brand">
+      <h3>YALLA Travel</h3>
+      <p>
+        Premium travel experiences in Georgia with the best value.
+        We turn every journey into a memory worth keeping.
+      </p>
+    </div>
+
+    <div class="footer-col links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col contact">
+      <h4>Contact</h4>
+      <p>📍 Georgia</p>
+      <p>📞 WhatsApp: <a href="https://wa.me/+995 593 64 41 80" target="_blank">Chat with us</a></p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 YALLA Travel. All rights reserved.
+  </div>
+</footer>
 
 </body>
 </html>
