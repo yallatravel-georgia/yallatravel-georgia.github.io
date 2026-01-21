@@ -413,7 +413,6 @@ body{
   height:220px;              /* ارتفاع ثابت ومناسب */
   display:block;
   object-fit:cover;
- object-position: center 70%;   /* جرّب 70% أو 75% */
 }
 
 /* 👇 أضف هنا بالزبط */
@@ -831,10 +830,10 @@ so every journey becomes a memory worth keeping.
   const featuredImg = document.getElementById("featuredImage");
 
   const featuredImages = [
-    "images/gudauri-1.jpg",
-    "images/gudauri-2.jpg",
-    "images/gudauri-3.jpg",
-    "images/gudauri-4.jpg"
+    { src: "images/gudauri-1.jpg", position: "center 70%" },
+    { src: "images/gudauri-2.jpg", position: "center" },
+    { src: "images/gudauri-3.jpg", position: "center 70%" },
+    { src: "images/gudauri-4.jpg", position: "center" }
   ];
 
   let index = 0;
@@ -843,12 +842,15 @@ so every journey becomes a memory worth keeping.
     index = (index + 1) % featuredImages.length;
 
     featuredImg.style.opacity = "0";
+
     setTimeout(() => {
-      featuredImg.src = featuredImages[index];
+      featuredImg.src = featuredImages[index].src;
+      featuredImg.style.objectPosition = featuredImages[index].position;
       featuredImg.style.opacity = "1";
-    }, 120);
+    }, 180);
   });
 </script>
+
 
 </body>
 </html>
