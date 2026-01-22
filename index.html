@@ -718,13 +718,18 @@ so every journey becomes a memory worth keeping.
       <!-- MINI CARDS -->
       <div class="mini-grid">
 
-        <div class="right-card right-mini">
-          <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=600&q=70" alt="Tbilisi">
-          <div class="right-body">
-            <p class="right-title">Tbilisi City Tour</p>
-            <p class="right-meta">Old town • Food • Views</p>
-          </div>
-        </div>
+      <div class="right-card right-mini">
+  <img 
+    src="images/tbilisi-1.jpg" 
+    alt="Tbilisi & Batumi" 
+    id="tbilisiBatumiImage"
+  >
+  <div class="right-body">
+    <p class="right-title">Tbilisi & Batumi Tour</p>
+    <p class="right-meta">City • Sea • Culture • Views</p>
+  </div>
+</div>
+
 
         <div class="right-card right-mini">
           <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=70" alt="Kazbegi">
@@ -851,6 +856,30 @@ so every journey becomes a memory worth keeping.
 
   // ⏱️ التغيير كل 4 ثواني
   setInterval(changeFeaturedImage, 4000);
+</script>
+  <script>
+const tbImg = document.getElementById("tbilisiBatumiImage");
+
+const tbImages = [
+  "images/tbilisi-1.jpg",
+  "images/tbilisi-2.jpg",
+  "images/batumi-1.jpg",
+  "images/batumi-2.jpeg"
+];
+
+let tbIndex = 0;
+
+setInterval(() => {
+  tbIndex = (tbIndex + 1) % tbImages.length;
+
+  tbImg.style.opacity = "0";
+
+  setTimeout(() => {
+    tbImg.src = tbImages[tbIndex];
+    tbImg.style.opacity = "1";
+  }, 200);
+
+}, 3500);
 </script>
 </body>
 </html>
